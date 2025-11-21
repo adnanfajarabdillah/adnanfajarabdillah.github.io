@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>adnan fajar abdillah </title> 
+    <title>Adnan Fajar Abdillah - Portofolio</title> 
     <meta name="description" content="Portofolio Resmi Adnan Fajar Abdillah. Penulis novel psikologis 'Negri Intuisi', Cerpenis, lulusan Psikologi.">
     <meta name="keywords" content="Adnan Fajar Abdillah, Adnan Fajar, Penulis Novel, lulusan Psikologi, Negri Intuisi, Linux Mint User">
     <meta name="author" content="Adnan Fajar Abdillah">
@@ -13,6 +13,7 @@
     <meta property="og:image" content="profil.jpg">
     <meta property="og:url" content="https://adnanfajarabdillah.github.io">
     <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -20,15 +21,7 @@
         /* --- PENGATURAN TAMPILAN (CSS) --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Header / Bagian Atas */
-        header {
-            background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Warna Gradasi */
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-    body {
+        body {
             font-family: 'Poppins', sans-serif;
             
             /* 1. Warna dasar gelap (diambil dari warna bawah gambar) */
@@ -36,45 +29,62 @@
             
             /* 2. Pasang gambar di paling atas */
             background-image: url('bg.jpg');
-            background-repeat: no-repeat; /* Jangan diulang gambarnya */
-            background-position: top center; /* Posisi di tengah atas */
-            background-attachment: fixed; /* Efek keren: gambar diam saat discroll */
+            background-repeat: no-repeat;
+            background-position: top center;
             background-size: 100% auto; /* Lebar memenuhi layar */
+            background-attachment: scroll; /* Scroll agar gambar tetap di atas */
             
-            /* 3. PENTING: Ubah warna tulisan umum jadi terang */
+            /* 3. Warna tulisan umum jadi terang */
             color: #ecf0f1; 
             line-height: 1.6;
         }
+
+        /* Header / Bagian Atas */
+        header {
+            /* KOREKSI: Dibuat transparan agar gambar BG terlihat */
+            background: transparent; 
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
         .profile-img {
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* Membuat foto jadi bulat */
+            border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
             margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
-        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
 
         /* Container Utama */
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
         /* Kartu-kartu Konten */
-        .section-title { text-align: center; margin-bottom: 30px; color: #ecf0f1; }
+        .section-title { text-align: center; margin-bottom: 30px; color: #ecf0f1; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Otomatis mengatur kolom */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
+        
         .card {
-            background: (255, 255, 255, 0.9);
+            /* KOREKSI: Ditambahkan 'rgba' agar transparan */
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             transition: transform 0.3s;
+            color: #333; /* Teks dalam kartu hitam */
         }
-        .card:hover { transform: translateY(-5px); /* Efek naik saat disentuh */ }
-        .card h3 { color: #333; margin-bottom: 10px; }
+        
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: #2c3e50; margin-bottom: 10px; }
 
         /* Tombol Kontak */
         .btn {
@@ -86,11 +96,12 @@
             border-radius: 25px;
             margin-top: 20px;
             transition: background 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         .btn:hover { background: #4ca1af; }
 
         /* Footer */
-        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
+        footer { text-align: center; padding: 20px; background: rgba(0,0,0,0.2); color: white; margin-top: 40px; }
         
         /* Tampilan HP */
         @media (max-width: 600px) {
@@ -108,8 +119,8 @@
         
         <a href="https://wa.me/6289615270788" class="btn"><i class="fab fa-whatsapp"></i> Hubungi Saya</a>
         <a href="mailto:fajarsuplex99@gmail.com" class="btn" style="background: #d93025; margin-left: 10px;">
-    <i class="fas fa-envelope"></i> Kirim Email
-</a>
+            <i class="fas fa-envelope"></i> Kirim Email
+        </a>
     </header>
 
     <div class="container">
