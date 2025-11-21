@@ -3,51 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adnan Fajar Abdillah - Portofolio</title> 
-    <meta name="description" content="Portofolio Resmi Adnan Fajar Abdillah. Penulis novel psikologis 'Negri Intuisi', Cerpenis, lulusan Psikologi.">
-    <meta name="keywords" content="Adnan Fajar Abdillah, Adnan Fajar, Penulis Novel, lulusan Psikologi, Negri Intuisi, Linux Mint User">
-    <meta name="author" content="Adnan Fajar Abdillah">
+    <title>Adnan Fajar Abdillah - Portofolio</title>
     
-    <meta property="og:title" content="Adnan Fajar Abdillah - Penulis & lulusan Psikologi">
-    <meta property="og:description" content="Kunjungi portofolio karya tulis dan program konseling saya.">
-    <meta property="og:image" content="profil.jpg">
-    <meta property="og:url" content="https://adnanfajarabdillah.github.io">
-    <meta property="og:type" content="website">
+    <meta name="description" content="Portofolio Resmi Adnan Fajar Abdillah. Penulis novel psikologis 'Negri Intuisi', Cerpenis, dan lulusan Psikologi.">
+    <meta name="keywords" content="Adnan Fajar Abdillah, Penulis Novel, Konselor BK, Psikologi, Negri Intuisi">
+    <meta name="author" content="Adnan Fajar Abdillah">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- PENGATURAN TAMPILAN (CSS) --- */
+        /* --- PENGATURAN TAMPILAN ORIGINAL (BERSIH) --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body {
-            font-family: 'Poppins', sans-serif;
-            
-            /* 1. Warna dasar gelap (diambil dari warna bawah gambar) */
-            background-color: #34525d; 
-            
-            /* 2. Pasang gambar di paling atas */
-            background-image: url('bg.jpg');
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-size: 100% auto; /* Lebar memenuhi layar */
-            background-attachment: scroll; /* Scroll agar gambar tetap di atas */
-            
-            /* 3. Warna tulisan umum jadi terang */
-            color: #ecf0f1; 
-            line-height: 1.6;
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #f8f9fa; /* Kembali ke warna terang */
+            color: #333; 
+            line-height: 1.6; 
         }
-
-        /* Header / Bagian Atas */
+        
+        /* Header Gradasi Biru-Hijau */
         header {
-            /* KOREKSI: Dibuat transparan agar gambar BG terlihat */
-            background: transparent; 
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
             color: white;
             padding: 100px 20px;
             text-align: center;
         }
-
+        
         .profile-img {
             width: 150px;
             height: 150px;
@@ -55,18 +38,19 @@
             border: 5px solid white;
             object-fit: cover;
             margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
         
-        header h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
 
         /* Container Utama */
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
-        /* Kartu-kartu Konten */
-        .section-title { text-align: center; margin-bottom: 30px; color: #ecf0f1; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        /* Judul Bagian */
+        .section-title { text-align: center; margin-bottom: 30px; color: #2c3e50; }
         
+        /* Grid Kartu */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -74,36 +58,31 @@
         }
         
         .card {
-            /* KOREKSI: Ditambahkan 'rgba' agar transparan */
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s;
-            color: #333; /* Teks dalam kartu hitam */
         }
-        
         .card:hover { transform: translateY(-5px); }
-        .card h3 { color: #2c3e50; margin-bottom: 10px; }
+        .card h3 { color: #4ca1af; margin-bottom: 10px; }
 
-        /* Tombol Kontak */
+        /* Tombol */
         .btn {
             display: inline-block;
-            background: #2c3e50;
+            background: #2c3e50; /* Tombol Gelap */
             color: white;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 25px;
             margin-top: 20px;
             transition: background 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         .btn:hover { background: #4ca1af; }
 
         /* Footer */
-        footer { text-align: center; padding: 20px; background: rgba(0,0,0,0.2); color: white; margin-top: 40px; }
+        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
         
-        /* Tampilan HP */
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
         }
@@ -114,12 +93,12 @@
     <header>
         <img src="fotoprofil.jpg" alt="Foto Profil" class="profile-img">
         
-        <h1>Halo, Saya Adnan Fajar</h1>
-        <p>Seorang pembelajar yang antusias, pengguna Linux Mint, dan penulis yang menyukai dunia teknologi & sastra.</p>
+        <h1>Halo, Saya Adnan Fajar Abdillah</h1>
+        <p>Seorang pembelajar yang antusias, lulusan Psikologi, dan penulis novel yang menyukai dunia teknologi & sastra.</p>
         
         <a href="https://wa.me/6289615270788" class="btn"><i class="fab fa-whatsapp"></i> Hubungi Saya</a>
         <a href="mailto:fajarsuplex99@gmail.com" class="btn" style="background: #d93025; margin-left: 10px;">
-            <i class="fas fa-envelope"></i> Kirim Email
+            <i class="fas fa-envelope"></i> Email
         </a>
     </header>
 
@@ -136,11 +115,11 @@
         <div class="card-grid">
             <div class="card">
                 <h3><i class="fas fa-book"></i> Penulis</h3>
-                <p>Aktif menulis novel dan artikel dengan berbagai sudut pandang cerita.</p>
+                <p>Aktif menulis novel "Negri Intuisi" dan artikel dengan berbagai sudut pandang cerita.</p>
             </div>
             <div class="card">
                 <h3><i class="fas fa-brain"></i> Psikologi & Konseling</h3>
-                <p>Berpengalaman dalam bimbingan konseling dan memahami perilaku manusia.</p>
+                <p>Lulusan Psikologi yang berpengalaman dalam bimbingan konseling dan memahami perilaku manusia.</p>
             </div>
             <div class="card">
                 <h3><i class="fab fa-linux"></i> Teknologi</h3>
