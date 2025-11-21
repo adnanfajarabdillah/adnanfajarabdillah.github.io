@@ -99,6 +99,37 @@
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
         }
+/* --- ANIMASI GERAK (MANTRA BARU) --- */
+        
+        /* 1. Bikin Rumus Gerakannya */
+        @keyframes munculCantik {
+            from { 
+                opacity: 0;             /* Mulai dari transparan */
+                transform: translateY(30px); /* Mulai dari agak bawah */
+            }
+            to { 
+                opacity: 1;             /* Jadi terlihat jelas */
+                transform: translateY(0);    /* Pindah ke posisi asli */
+            }
+        }
+
+        /* 2. Terapkan ke Header (Muncul duluan) */
+        header {
+            animation: munculCantik 1s ease-out forwards;
+        }
+
+        /* 3. Terapkan ke Isi Konten (Muncul belakangan/Delay) */
+        .container {
+            opacity: 0; /* Sembunyi dulu biar nggak kaget */
+            animation: munculCantik 1s ease-out 0.5s forwards; /* Delay 0.5 detik */
+        }
+        
+        /* 4. Terapkan ke Footer */
+        footer {
+            opacity: 0;
+            animation: munculCantik 1s ease-out 1s forwards; /* Delay 1 detik */
+        }
+
     </style>
 </head>
 <body>
