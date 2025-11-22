@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Adnan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- GAYA PERPUSTAKAAN MODERN --- */
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; }
+        
+        /* Header Pencarian */
+        .library-header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .search-box {
+            margin-top: 20px;
+            position: relative;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            font-family: inherit;
+        }
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: #888;
+        }
+
+        /* Rak Buku (Grid System) */
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .section-label { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 15px; }
+
+        .book-grid {
+            display: grid;
+            /* Ini rumus sakti biar responsif (HP 1 kolom, Laptop 4 kolom) */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+            gap: 30px;
+        }
+
+        /* Kartu Buku */
+        .book-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .book-card:hover {
+            transform: translateY(-10px); /* Efek naik saat disentuh */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Gambar Cover */
+        .book-cover {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #ddd; /* Warna abu kalau gambar loading */
+        }
+        
+        /* Label Kategori (Pojok Kiri Atas) */
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .bg-fiksi { background: #9b59b6; }
+        .bg-psy { background: #27ae60; }
+
+        /* Info Buku */
+        .book-info { padding: 15px; text-align: center; }
+        .book-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; color: #2c3e50; }
+        .book-author { font-size: 0.9rem; color: #7f8c8d; margin-bottom: 15px; }
+        
+        .btn-read {
+            display: block;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .btn-read:hover { background: #c0392b; }
+        
+        .btn-home {
+            position: fixed; bottom: 20px; right: 20px;
+            background: #2c3e50; color: white;
+            width: 50px; height: 50px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="library-header">
+        <h1><i class="fas fa-book-reader"></i> Perpustakaan Digital</h1>
+        <p>Koleksi Karya Tulis & Arsip Adnan Fajar</p>
+        
+        <div class="search-box">
+            <input type="text" placeholder="Cari judul buku...">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="section-label">Koleksi Terbaru</div>
+
+        <div class="book-grid">
+
+            <div class="book-card">
+                <span class="badge bg-fiksi">Fiksi / Psikologi</span>
+                <img src="https://via.placeholder.com/200x300/2c3e50/ffffff?text=Negeri+Intuisi" alt="Cover" class="book-cover">
+                <div class="book-info">
+                    <div class="book-title">Negeri Intuisi</div>
+                    <div class="book-author">Adnan Fajar Abdillah</div>
+                    <a href="novel.pdf" class="btn-read" target="_blank">Baca Sekarang</a>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <span class="badge bg-psy">Artikel Ilmiah</span>
+                <img src="https://via.placeholder.com/200x300/27ae60/ffffff?text=Psikologi+Anak" alt="Cover" class="book-cover">
+                <div class="book-info">
+                    <div class="book-title">Psikologi Anak (MI)</div>
+                    <div class="book-author">Adnan Fajar Abdillah</div>
+                    <a href="#" class="btn-read">Segera Hadir</a>
+                </div>
+            </div>
+            
+             <div class="book-card">
+                <span class="badge bg-fiksi">Antologi</span>
+                <img src="https://via.placeholder.com/200x300/e74c3c/ffffff?text=Antologi+17:00" alt="Cover" class="book-cover">
+                <div class="book-info">
+                    <div class="book-title">Antologi 17:00</div>
+                    <div class="book-author">Adnan Fajar Abdillah</div>
+                    <a href="#" class="btn-read">Baca Sinopsis</a>
+                </div>
+            </div>
+
+        </div> </div>
+
+    <a href="index.html" class="btn-home" title="Kembali ke Beranda">
+        <i class="fas fa-home"></i>
+    </a>
+
+</body>
+</html>
