@@ -3,121 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karya Tulis - Negri Intuisi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <title>Jejak Kegiatan - Adnan Fajar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- DESAIN HALAMAN KARYA --- */
-        body { font-family: 'Poppins', sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 0; line-height: 1.8; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; line-height: 1.6; }
         
-        /* Header Gelap Misterius */
-        .book-header {
-            background: #2c3e50;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 5px solid #e74c3c; /* Aksen Merah */
+        /* Header */
+        .activity-header {
+            background: #2980b9; /* Warna Biru */
+            color: white; padding: 50px 20px; text-align: center;
         }
-        .book-title { font-family: 'Lora', serif; font-size: 3rem; margin-bottom: 10px; font-weight: bold; }
-        .book-subtitle { font-size: 1.2rem; opacity: 0.9; font-style: italic; font-family: 'Lora', serif; }
-
-        /* Kotak Utama */
-        .container { 
-            max-width: 800px; 
-            margin: -40px auto 0; /* Naik sedikit ke atas header */
+        
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        /* --- GAYA KARTU YANG RAPI (KIRI GAMBAR - KANAN TEKS) --- */
+        .activity-item {
+            display: flex; /* Kuncinya disini: Biar sebelahan */
             background: white; 
-            padding: 40px; 
-            border-radius: 10px; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
-            position: relative; 
-        }
-        
-        /* Teks Sinopsis (Font Buku) */
-        .synopsis-text { 
-            font-family: 'Lora', serif; 
-            font-size: 1.1rem; 
-            text-align: justify; 
+            border-radius: 15px; 
+            overflow: hidden;
             margin-bottom: 30px; 
-            color: #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border-left: 5px solid #2980b9; /* Garis hiasan biru di kiri */
         }
-        
-        /* Kotak Info Detail */
-        .info-box { 
-            background: #f8f9fa; 
-            padding: 20px; 
-            border-left: 5px solid #2c3e50; 
-            margin-bottom: 30px; 
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-        }
-        .info-item i { color: #e74c3c; margin-right: 8px; }
-        
-        /* Tombol */
-        .btn-group { text-align: center; margin-top: 40px; }
-        .btn { display: inline-block; padding: 12px 30px; border-radius: 30px; text-decoration: none; color: white; font-weight: bold; transition: 0.3s; margin: 5px; }
-        
-        .btn-download { background: #e74c3c; box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); }
-        .btn-download:hover { background: #c0392b; transform: translateY(-3px); }
-        
-        .btn-back { background: #95a5a6; }
-        .btn-back:hover { background: #7f8c8d; }
+        .activity-item:hover { transform: translateY(-5px); }
 
-        /* Animasi Masuk */
-        .container { animation: naikKeatas 1s ease-out forwards; opacity: 0; transform: translateY(30px); }
-        @keyframes naikKeatas { to { opacity: 1; transform: translateY(0); } }
+        /* Pengatur Gambar */
+        .activity-img {
+            width: 300px; /* Lebar foto tetap */
+            min-height: 250px;
+            object-fit: cover; /* Biar foto tidak gepeng */
+            background-color: #ddd;
+        }
+
+        /* Pengatur Teks */
+        .activity-content { padding: 30px; flex: 1; }
         
-        /* Responsif HP */
-        @media (max-width: 600px) {
-            .book-title { font-size: 2rem; }
+        .activity-date { 
+            font-size: 0.9rem; color: #e74c3c; font-weight: bold; 
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        h3 { font-size: 1.4rem; margin: 10px 0; color: #2c3e50; }
+        p { color: #666; }
+
+        /* Tombol Balik */
+        .btn-back { display: block; text-align: center; margin-top: 40px; text-decoration: none; color: #7f8c8d; margin-bottom: 40px; }
+        .btn-back:hover { color: #2980b9; }
+
+        /* Tampilan HP (Biar foto pindah ke atas) */
+        @media (max-width: 768px) {
+            .activity-item { flex-direction: column; }
+            .activity-img { width: 100%; height: 200px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="book-header">
-        <h1 class="book-title">Negeri Intuisi</h1>
-        <p class="book-subtitle">"Singgah dengan makna yang butuh waktu"</p>
+    <div class="activity-header">
+        <h1><i class="fas fa-camera-retro"></i> Jejak Organisasi & Kegiatan</h1>
+        <p>Dokumentasi perjalanan karya, edukasi, dan pengabdian.</p>
     </div>
 
     <div class="container">
-        
-        <div class="info-box">
-            <div class="info-item"><i class="fas fa-user-edit"></i> <strong>Penulis:</strong> Adnan Fajar Abdillah</div>
-            <div class="info-item"><i class="fas fa-tag"></i> <strong>Genre:</strong> Antologi Prosa & Psikologi</div>
-            <div class="info-item"><i class="fas fa-calendar-alt"></i> <strong>Terbit:</strong> Malang, 2024</div>
+
+        <div class="activity-item">
+            <img src="foto3psi.JPG" alt="Rakorwil ILMPI" class="activity-img">
+            
+            <div class="activity-content">
+                <span class="activity-date">Agustus 2022</span>
+                <h3>Rapat Koordinasi ILMPI Wilayah V</h3>
+                <p>Menghadiri dan berpartisipasi aktif dalam Rapat Koordinasi Ikatan Lembaga Mahasiswa Psikologi Indonesia (ILMPI). Mengusung tema "Guyub Rukun Mbangun Lembaga", kegiatan ini menjadi wadah bertukar pikiran antar delegasi kampus untuk kemajuan psikologi di Indonesia.</p>
+            </div>
         </div>
 
-        <h2 style="text-align: center; margin-bottom: 20px; color: #2c3e50; font-family:'Poppins', sans-serif;">Deskripsi Karya</h2>
-        
-        <div class="synopsis-text">
-            <p><strong>"Negeri Intuisi"</strong> bukanlah tempat yang bisa kau temukan dalam peta dunia. Ia adalah sebuah ruang imajiner yang dibangun di dalam diri, sebuah singgasana tanpa peperangan, tempat di mana kita mencoba berdamai dengan riuh di kepala sendiri.</p>
-            <br>
-            <p>Lewat kumpulan narasi, puisi, dan dialog filosofis antara tokoh-tokoh seperti Supri, Yanto, dan Nirmata, buku ini merekam jejak perjalanan manusia dewasa yang lelah. Tentang rindu akan "pulang" ke rumah yang tak sekadar bangunan, tentang tersesat di persimpangan jalan hidup, dan tentang perdebatan sengit antara logika yang berteriak dan intuisi yang berbisik.</p>
-            <br>
-            <p>Ditulis sebagai arsip bagi sebuah negeri yang awalnya dibangun untuk dua insan, namun kini harus dihuni sendiri. Ini adalah persembahan untuk mereka yang sedang mencari kemerdekaan diri di tengah hiruk-pikuk kepala dua.</p>
+        <div class="activity-item">
+            <img src="foto2psi.JPG" alt="Foto Delegasi" class="activity-img">
+            
+            <div class="activity-content">
+                <span class="activity-date">Dokumentasi Kegiatan</span>
+                <h3>Sinergi Mahasiswa Psikologi</h3>
+                <p>Membangun relasi dan keakraban bersama rekan-rekan mahasiswa psikologi dari berbagai universitas. Momen ini memperkuat jaringan profesional dan solidaritas sesama calon praktisi kesehatan mental.</p>
+            </div>
         </div>
 
-        <div class="btn-group">
-            <a href="antologi-negeri-intuisi-no-full-version.pdf" class="btn btn-download" target="_blank">
-                <i class="fas fa-file-download"></i> Download & Baca PDF
-            </a>
+        <div class="activity-item">
+            <img src="foto1psi.jpg" alt="Foto Bersama" class="activity-img">
             
-            <br><br>
-            
-            <a href="index.html" class="btn btn-back">
-                <i class="fas fa-arrow-left"></i> Kembali ke Beranda
-            </a>
+            <div class="activity-content">
+                <span class="activity-date">Dokumentasi Kegiatan</span>
+                <h3>Kebersamaan Delegasi</h3>
+                <p>Potret kebersamaan seluruh peserta delegasi setelah sesi diskusi selesai. Semangat kolaborasi untuk masa depan psikologi Indonesia.</p>
+            </div>
         </div>
+
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
 
     </div>
-
-    <br><br>
-    
-    <footer style="text-align: center; font-size: 0.8rem; opacity: 0.7; margin-bottom: 20px;">
-        &copy; 2025 Adnan Fajar Abdillah. Hak Cipta Dilindungi.
-    </footer>
 
 </body>
 </html>
