@@ -10,88 +10,83 @@
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; line-height: 1.6; }
         
-        /* Header */
+        /* Header Biru (Kembali diadakan biar bagus) */
         .activity-header {
-            background: #2980b9; /* Warna Biru */
+            background: #2980b9; 
             color: white; padding: 50px 20px; text-align: center;
         }
         
+        /* Container biar tidak mepet pinggir */
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         
-        /* --- GAYA KARTU YANG RAPI (KIRI GAMBAR - KANAN TEKS) --- */
         .activity-item {
-            display: flex; /* Kuncinya disini: Biar sebelahan */
-            background: white; 
-            border-radius: 15px; 
-            overflow: hidden;
-            margin-bottom: 30px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            border-left: 5px solid #2980b9; /* Garis hiasan biru di kiri */
-        }
-        .activity-item:hover { transform: translateY(-5px); }
-
-        /* Pengatur Gambar */
-        .activity-img {
-            width: 300px; /* Lebar foto tetap */
-            min-height: 250px;
-            object-fit: cover; /* Biar foto tidak gepeng */
-            background-color: #ddd;
+            display: flex; background: white; border-radius: 15px; overflow: hidden;
+            margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid #2980b9;
+            flex-direction: column; /* Biar numpuk ke bawah (Teks atas, Foto bawah) */
         }
 
-        /* Pengatur Teks */
-        .activity-content { padding: 30px; flex: 1; }
-        
-        .activity-date { 
-            font-size: 0.9rem; color: #e74c3c; font-weight: bold; 
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-
+        .activity-content { padding: 30px; }
+        .activity-date { font-size: 0.9rem; color: #e74c3c; font-weight: bold; text-transform: uppercase; }
         h3 { font-size: 1.4rem; margin: 10px 0; color: #2c3e50; }
-        p { color: #666; }
-
-        /* Tombol Balik */
-        .btn-back { display: block; text-align: center; margin-top: 40px; text-decoration: none; color: #7f8c8d; margin-bottom: 40px; }
-        .btn-back:hover { color: #2980b9; }
-
-        /* Tampilan HP (Biar foto pindah ke atas) */
-        @media (max-width: 768px) {
-            .activity-item { flex-direction: column; }
-            .activity-img { width: 100%; height: 200px; }
+        
+        /* Grid Foto (3 Foto Jejer) */
+        .photo-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 15px; 
+            padding: 0 30px 30px; /* Padding biar gak mepet */
         }
+        
+        .photo-grid img {
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .photo-grid img:hover { transform: scale(1.02); }
+
+        .btn-back { display: block; text-align: center; margin-top: 40px; text-decoration: none; color: #7f8c8d; margin-bottom: 40px; }
     </style>
 </head>
 <body>
 
-    <div class="activity-section">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">Jejak Organisasi & Kegiatan</h2>
+    <div class="activity-header">
+        <h1><i class="fas fa-camera-retro"></i> Jejak Organisasi & Kegiatan</h1>
+        <p>Dokumentasi perjalanan karya, edukasi, dan pengabdian.</p>
+    </div>
 
-            <div class="activity-item" style="flex-direction: column;">
-                
-                <div class="activity-content">
-                    <span class="activity-date">Agustus 2022</span>
-                    <h3>Rapat Koordinasi ILMPI Wilayah V</h3>
-                    <p>Menghadiri Rapat Koordinasi Ikatan Lembaga Mahasiswa Psikologi Indonesia. Sebuah momen berharga untuk bertukar pikiran, membangun relasi, dan memperkuat solidaritas antar mahasiswa psikologi se-Indonesia demi kemajuan kesehatan mental bangsa.</p>
-                </div>
+    <div class="container">
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; padding: 0 20px 20px;">
-                    <img src="ilmpi1.jpg" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
-                    <img src="ilmpi2.JPG" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
-                    <img src="ilmpi3.JPG" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
-                </div>
-
+        <div class="activity-item">
+            
+            <div class="activity-content">
+                <span class="activity-date">Agustus 2022</span>
+                <h3>Rapat Koordinasi ILMPI Wilayah V</h3>
+                <p>Menghadiri Rapat Koordinasi Ikatan Lembaga Mahasiswa Psikologi Indonesia. Sebuah momen berharga untuk bertukar pikiran, membangun relasi, dan memperkuat solidaritas antar mahasiswa psikologi se-Indonesia.</p>
             </div>
 
-            <div class="activity-item">
-                <img src="https://via.placeholder.com/400x300/e67e22/ffffff?text=Kegiatan+Baru" alt="Kegiatan Baru" class="activity-img">
-                
-                <div class="activity-content">
-                    <span class="activity-date">Bulan Tahun</span>
-                    <h3>Judul Kegiatan Selanjutnya</h3>
-                    <p>Ini adalah tempat untuk kegiatan barumu nanti (misal: Seminar Parenting atau Konseling). Tinggal ganti foto dan teksnya saja.</p>
-                </div>
+            <div class="photo-grid">
+                <img src="foto1psi.jpg" alt="Foto 1">
+                <img src="foto2psi.JPG" alt="Foto 2">
+                <img src="foto3psi.JPG" alt="Foto 3">
             </div>
 
         </div>
+
+        <div class="activity-item" style="flex-direction: row;">
+            <img src="https://via.placeholder.com/400x300/e67e22/ffffff?text=Kegiatan+Baru" style="width: 300px; object-fit: cover;">
+            <div class="activity-content">
+                <span class="activity-date">Coming Soon</span>
+                <h3>Kegiatan Selanjutnya</h3>
+                <p>Ruang ini siap diisi dengan dokumentasi kegiatan barumu nanti.</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+
+    </div>
+
 </body>
 </html>
