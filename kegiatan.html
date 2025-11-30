@@ -8,90 +8,97 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; line-height: 1.6; }
         
         /* Header */
         .activity-header {
-            background: #2980b9; /* Warna Biru Profesional */
+            background: #2980b9; /* Warna Biru */
             color: white; padding: 50px 20px; text-align: center;
         }
         
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         
-        /* Grid Kegiatan */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* Kartu Kegiatan */
-        .event-card {
-            background: white; border-radius: 15px; overflow: hidden;
+        /* --- GAYA KARTU YANG RAPI (KIRI GAMBAR - KANAN TEKS) --- */
+        .activity-item {
+            display: flex; /* Kuncinya disini: Biar sebelahan */
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden;
+            margin-bottom: 30px; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
-            border-bottom: 5px solid #2980b9;
+            border-left: 5px solid #2980b9; /* Garis hiasan biru di kiri */
         }
-        .event-card:hover { transform: translateY(-10px); }
+        .activity-item:hover { transform: translateY(-5px); }
 
-        /* Gambar Kegiatan */
-        .event-img {
-            width: 100%; height: 200px; object-fit: cover;
+        /* Pengatur Gambar */
+        .activity-img {
+            width: 300px; /* Lebar foto tetap */
+            min-height: 250px;
+            object-fit: cover; /* Biar foto tidak gepeng */
             background-color: #ddd;
         }
 
-        /* Isi Kartu */
-        .event-content { padding: 20px; position: relative; }
+        /* Pengatur Teks */
+        .activity-content { padding: 30px; flex: 1; }
         
-        /* Tanggal (Badge) */
-        .event-date {
-            position: absolute; top: -20px; right: 20px;
-            background: #e74c3c; color: white;
-            padding: 5px 15px; border-radius: 20px;
-            font-size: 0.8rem; font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        .activity-date { 
+            font-size: 0.9rem; color: #e74c3c; font-weight: bold; 
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
-        .event-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; color: #2c3e50; }
-        .event-desc { font-size: 0.9rem; color: #666; line-height: 1.6; }
-        .event-tag {
-            display: inline-block; margin-top: 15px;
-            background: #ecf0f1; color: #7f8c8d;
-            padding: 4px 10px; border-radius: 5px; font-size: 0.8rem;
-        }
+        h3 { font-size: 1.4rem; margin: 10px 0; color: #2c3e50; }
+        p { color: #666; }
 
         /* Tombol Balik */
         .btn-back { display: block; text-align: center; margin-top: 40px; text-decoration: none; color: #7f8c8d; margin-bottom: 40px; }
+        .btn-back:hover { color: #2980b9; }
+
+        /* Tampilan HP (Biar foto pindah ke atas) */
+        @media (max-width: 768px) {
+            .activity-item { flex-direction: column; }
+            .activity-img { width: 100%; height: 200px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="activity-section">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">Jejak Organisasi & Kegiatan</h2>
+    <div class="activity-header">
+        <h1><i class="fas fa-camera-retro"></i> Jejak Organisasi & Kegiatan</h1>
+        <p>Dokumentasi perjalanan karya, edukasi, dan pengabdian.</p>
+    </div>
 
-            <div class="activity-item">
-                <img src="ilmpi1.jpg" alt="Rakorwil ILMPI" class="activity-img">
-                <div class="activity-content">
-                    <span class="activity-date">Agustus 2022</span>
-                    <h3>Rapat Koordinasi ILMPI Wilayah V</h3>
-                    <p>Menghadiri dan berpartisipasi aktif dalam Rapat Koordinasi Ikatan Lembaga Mahasiswa Psikologi Indonesia (ILMPI). Mengusung tema "Guyub Rukun Mbangun Lembaga", kegiatan ini menjadi wadah bertukar pikiran antar delegasi kampus untuk kemajuan psikologi di Indonesia.</p>
-                </div>
+    <div class="container">
+
+        <div class="activity-item">
+            <img src="foto3psi.JPG" alt="Rakorwil ILMPI" class="activity-img">
+            
+            <div class="activity-content">
+                <span class="activity-date">Agustus 2022</span>
+                <h3>Rapat Koordinasi ILMPI Wilayah V</h3>
+                <p>Menghadiri dan berpartisipasi aktif dalam Rapat Koordinasi Ikatan Lembaga Mahasiswa Psikologi Indonesia (ILMPI). Mengusung tema "Guyub Rukun Mbangun Lembaga", kegiatan ini menjadi wadah bertukar pikiran antar delegasi kampus untuk kemajuan psikologi di Indonesia.</p>
             </div>
-
-            <div class="activity-item">
-                <img src="foto1psi.jpg" alt="Foto Bersama Delegasi" class="activity-img">
-                <img src="foto2psi.JPG" alt="Foto Bersama Delegasi" class="activity-img">
-                 <img src="foto3psi.JPG" alt="Foto Bersama Delegasi" class="activity-img">
-                <div class="activity-content">
-                    <span class="activity-date">Dokumentasi Kegiatan</span>
-                    <h3>Sinergi Mahasiswa Psikologi</h3>
-                    <p>Membangun relasi dan keakraban bersama rekan-rekan mahasiswa psikologi dari berbagai universitas. Momen ini memperkuat jaringan profesional dan solidaritas sesama calon praktisi kesehatan mental.</p>
-                </div>
-            </div>
-
         </div>
 
+        <div class="activity-item">
+            <img src="foto2psi.JPG" alt="Foto Delegasi" class="activity-img">
+            
+            <div class="activity-content">
+                <span class="activity-date">Dokumentasi Kegiatan</span>
+                <h3>Sinergi Mahasiswa Psikologi</h3>
+                <p>Membangun relasi dan keakraban bersama rekan-rekan mahasiswa psikologi dari berbagai universitas. Momen ini memperkuat jaringan profesional dan solidaritas sesama calon praktisi kesehatan mental.</p>
+            </div>
+        </div>
 
+        <div class="activity-item">
+            <img src="foto1psi.jpg" alt="Foto Bersama" class="activity-img">
+            
+            <div class="activity-content">
+                <span class="activity-date">Dokumentasi Kegiatan</span>
+                <h3>Kebersamaan Delegasi</h3>
+                <p>Potret kebersamaan seluruh peserta delegasi setelah sesi diskusi selesai. Semangat kolaborasi untuk masa depan psikologi Indonesia.</p>
+            </div>
+        </div>
 
         <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
 
