@@ -10,32 +10,35 @@
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; line-height: 1.6; }
         
-        /* Header Biru (Kembali diadakan biar bagus) */
+        /* Header Biru */
         .activity-header {
             background: #2980b9; 
             color: white; padding: 50px 20px; text-align: center;
         }
         
-        /* Container biar tidak mepet pinggir */
+        /* Container Utama */
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         
+        /* Kartu Kegiatan */
         .activity-item {
             display: flex; background: white; border-radius: 15px; overflow: hidden;
-            margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px; /* Jarak antar kartu */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             border-left: 5px solid #2980b9;
-            flex-direction: column; /* Biar numpuk ke bawah (Teks atas, Foto bawah) */
+            flex-direction: column; 
         }
 
         .activity-content { padding: 30px; }
         .activity-date { font-size: 0.9rem; color: #e74c3c; font-weight: bold; text-transform: uppercase; }
         h3 { font-size: 1.4rem; margin: 10px 0; color: #2c3e50; }
+        p { text-align: justify; } /* Biar tulisan paragraf rapi rata kanan-kiri */
         
         /* Grid Foto (3 Foto Jejer) */
         .photo-grid {
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
             gap: 15px; 
-            padding: 0 30px 30px; /* Padding biar gak mepet */
+            padding: 0 30px 30px; 
         }
         
         .photo-grid img {
@@ -44,38 +47,24 @@
             object-fit: cover; 
             border-radius: 8px;
             transition: transform 0.3s;
+            background-color: #ddd;
         }
         .photo-grid img:hover { transform: scale(1.02); }
 
-        .btn-back { display: block; text-align: center; margin-top: 40px; text-decoration: none; color: #7f8c8d; margin-bottom: 40px; }
-        
-         /* --- TOMBOL MENGAMBANG (FLOATING BUTTON) --- */
+        /* Tombol Mengambang */
         .btn-floating {
-            position: fixed; /* Kunci biar mengambang */
-            bottom: 30px;    /* Jarak dari bawah */
-            right: 30px;     /* Jarak dari kanan */
-            
-            width: 60px;     /* Lebar lingkaran */
-            height: 60px;    /* Tinggi lingkaran */
-            background-color: #2980b9; /* Warna Biru tema kegiatan */
-            color: white;
-            border-radius: 50%; /* Jadi bulat sempurna */
-            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            font-size: 1.5rem; /* Ukuran ikon */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Bayangan biar timbul */
-            transition: all 0.3s ease; /* Efek halus */
-            z-index: 1000; /* Biar selalu di paling atas */
+            position: fixed; bottom: 30px; right: 30px;
+            width: 60px; height: 60px; 
+            background-color: #2980b9; color: white;
+            border-radius: 50%; 
+            display: flex; justify-content: center; align-items: center;
+            text-decoration: none; font-size: 1.5rem; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+            transition: all 0.3s ease; z-index: 1000;
         }
-
-        /* Efek saat disentuh mouse */
         .btn-floating:hover {
-            transform: translateY(-5px) scale(1.1); /* Naik & Membesar dikit */
-            background-color: #3498db; /* Warna jadi lebih terang */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            transform: translateY(-5px) scale(1.1); 
+            background-color: #3498db;
         }
     </style>
 </head>
@@ -86,14 +75,12 @@
         <p>Dokumentasi perjalanan karya, edukasi, dan pengabdian.</p>
     </div>
 
-<div class="container">
+    <div class="container">
 
         <div class="activity-item">
-
             <div class="activity-content">
-
                 <span class="activity-date">April 2021</span>
-                <h3>Pendampingan Psikososial Tirtoyudo </h3>
+                <h3>Pendampingan Psikososial Tirtoyudo</h3>
                 <p>Turun langsung ke lapangan Bersama Himpunan Mahasiswa Psikologi dan Badan Eksekutif Mahasiswa Universitas Islam Raden Rahmat Malang, untuk memberikan layanan dukungan psikososial (LDP). Fokus utama adalah memvalidasi rasa trauma, memberikan <em>Psychological First Aid</em> (PFA), dan membangun kembali resiliensi warga terdampak, terutama kelompok rentan seperti anak-anak dan lansia.</p>
             </div>
             <div class="photo-grid">
@@ -101,45 +88,31 @@
                 <img src="psikososial2.JPG" alt="Foto 2">
                 <img src="psikososial3.JPG" alt="Foto 3">
             </div>
-<div class="container">
-
-        <div class="activity-item">
-
+        </div> <div class="activity-item">
             <div class="activity-content">
-
                 <span class="activity-date">Januari 2022</span>
-                <h3>Pemberian Bantuan sosial dan dukungan layanan Psikologi pada Bencana Semeru Lumajang </h3>
-                <p>Turun langsung ke lapangan dinaungi oleh Remaja Masjid Riyadlun Nahdiliyin dan Kementrian sosial, untuk memberikan layanan dukungan psikososial (LDP). Fokus utama adalah memvalidasi rasa trauma, memberi dukungan pendidikan untuk anak-anak yang mengungsi pada posko, dan membangun kembali resiliensi warga terdampak, terutama kelompok rentan seperti anak-anak dan lansia. beserta memberi dukungan bansos kepada posko tanggap bencana Kemensos</p>
+                <h3>Pemberian Bantuan Sosial & Dukungan Layanan Psikologi Semeru</h3>
+                <p>Turun langsung ke lapangan dinaungi oleh Remaja Masjid Riyadlun Nahdiliyin dan Kementrian sosial, untuk memberikan layanan dukungan psikososial (LDP). Fokus utama adalah memvalidasi rasa trauma, memberi dukungan pendidikan untuk anak-anak yang mengungsi pada posko, dan membangun kembali resiliensi warga terdampak. Beserta memberi dukungan bansos kepada posko tanggap bencana Kemensos.</p>
             </div>
             <div class="photo-grid">
                 <img src="semeru1.jpg" alt="Foto 1">
                 <img src="semeru2.jpg" alt="Foto 2">
                 <img src="semeru3.jpg" alt="Foto 3">
             </div>
-
-    <div class="container">
-
-        <div class="activity-item">
-            
+        </div> <div class="activity-item">
             <div class="activity-content">
                 <span class="activity-date">Agustus 2022</span>
                 <h3>Rapat Koordinasi ILMPI Wilayah V</h3>
                 <p>Menghadiri Rapat Koordinasi Ikatan Lembaga Mahasiswa Psikologi Indonesia. Sebuah momen berharga untuk bertukar pikiran, membangun relasi, dan memperkuat solidaritas antar mahasiswa psikologi se-Indonesia.</p>
             </div>
-
             <div class="photo-grid">
                 <img src="foto1psi.jpg" alt="Foto 1">
                 <img src="foto2psi.JPG" alt="Foto 2">
                 <img src="foto3psi.JPG" alt="Foto 3">
             </div>
+        </div> <a href="index.html" class="btn-floating" title="Kembali ke Beranda">
+            <i class="fas fa-home"></i>
+        </a>
 
-      </div>
-
-        <a href="index.html" class="btn-floating" title="Kembali ke Beranda">
-        <i class="fas fa-home"></i>
-    </a>
-
-    </div>
-
-</body>
+    </div> </body>
 </html>
