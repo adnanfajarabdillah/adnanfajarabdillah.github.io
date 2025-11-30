@@ -37,6 +37,35 @@
         .btn-download:hover { background: #c0392b; }
         
         .btn-back { display: block; text-align: center; margin-top: 30px; text-decoration: none; color: #95a5a6; }
+        
+         /* --- TOMBOL MENGAMBANG (FLOATING BUTTON) --- */
+        .btn-floating {
+            position: fixed; /* Kunci biar mengambang */
+            bottom: 30px;    /* Jarak dari bawah */
+            right: 30px;     /* Jarak dari kanan */
+            
+            width: 60px;     /* Lebar lingkaran */
+            height: 60px;    /* Tinggi lingkaran */
+            background-color: #2980b9; /* Warna Biru tema kegiatan */
+            color: white;
+            border-radius: 50%; /* Jadi bulat sempurna */
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.5rem; /* Ukuran ikon */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Bayangan biar timbul */
+            transition: all 0.3s ease; /* Efek halus */
+            z-index: 1000; /* Biar selalu di paling atas */
+        }
+
+        /* Efek saat disentuh mouse */
+        .btn-floating:hover {
+            transform: translateY(-5px) scale(1.1); /* Naik & Membesar dikit */
+            background-color: #3498db; /* Warna jadi lebih terang */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
     </style>
 </head>
 <body>
@@ -67,7 +96,9 @@
                 <i class="fas fa-file-download"></i> Download & Baca PDF
             </a>
             
-            <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+          <a href="index.html" class="btn-floating" title="Kembali ke Beranda">
+        <i class="fas fa-home"></i>
+    </a>
         </div>
 
     </div>
