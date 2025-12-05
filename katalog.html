@@ -52,13 +52,19 @@
         }
 
         /* Kartu Buku */
-        .book-card {
+           .book-card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             position: relative;
+            
+            /* --- RUMUS BARU BIAR RATA --- */
+            display: flex;
+            flex-direction: column; /* Susun isinya ke bawah */
+            height: 100%; /* Paksa tinggi kartu mentok ke dasar grid */
+        }
         }
         .book-card:hover {
             transform: translateY(-10px); /* Efek naik saat disentuh */
@@ -103,7 +109,19 @@
             font-size: 0.9rem;
             transition: 0.3s;
         }
-        .btn-read:hover { background: #c0392b; }
+        .btn-read {
+            display: block;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            
+            /* --- KUNCI BIAR NEMPEL DI BAWAH --- */
+            margin-top: auto; 
+        }
         
         .btn-home {
             position: fixed; bottom: 20px; right: 20px;
