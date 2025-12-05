@@ -71,12 +71,15 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
-        /* Gambar Cover */
+        /* Gambar Cover (Rasio Ebook 2:3) */
         .book-cover {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            background-color: #ddd; /* Warna abu kalau gambar loading */
+            /* Ini kuncinya: Memaksa gambar jadi persegi panjang tegak */
+            aspect-ratio: 2 / 3; 
+            
+            object-fit: cover; /* Agar gambar tidak gepeng */
+            object-position: center;
+            border-bottom: 1px solid #eee;
         }
         
         /* Label Kategori (Pojok Kiri Atas) */
