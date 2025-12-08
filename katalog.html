@@ -8,123 +8,179 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- GAYA PERPUSTAKAAN MODERN --- */
-        body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; }
-        
-        /* Header Pencarian */
-        .library-header {
-            background: #2c3e50;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .search-box {
-            margin-top: 20px;
-            position: relative;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .search-box input {
-            width: 100%;
-            padding: 15px 50px 15px 20px;
-            border-radius: 30px;
-            border: none;
-            outline: none;
-            font-family: inherit;
-        }
-        .search-box i {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            color: #888;
-        }
+        /* --- GAYA PERPUSTAKAAN MODERN (DIPERBAIKI) --- */
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f7f9fc; /* Sedikit lebih terang */
+    color: #333; 
+    margin: 0; 
+    line-height: 1.6; /* Keterbacaan yang lebih baik */
+}
 
-        /* Rak Buku (Grid System) */
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .section-label { font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; color: #2c3e50; border-left: 5px solid #e74c3c; padding-left: 15px; }
+/* Header Pencarian */
+.library-header {
+    background: linear-gradient(135deg, #2c3e50, #4a637a); /* Gradien untuk kesan premium */
+    color: white;
+    padding: 50px 20px; /* Padding lebih besar */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.library-header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+.library-header p {
+    opacity: 0.8;
+}
+.search-box {
+    margin-top: 30px;
+    position: relative;
+    max-width: 550px; /* Lebih lebar sedikit */
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-box input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border-radius: 40px; /* Lebih bulat */
+    border: 2px solid #5a7b98; /* Border halus */
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+.search-box input:focus {
+    border-color: #e74c3c; /* Highlight saat fokus */
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.2);
+}
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 17px;
+    color: #5a7b98;
+    font-size: 1.1rem;
+}
 
-        .book-grid {
-            display: grid;
-            /* Ini rumus sakti biar responsif (HP 1 kolom, Laptop 4 kolom) */
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-            gap: 30px;
-        }
+/* Rak Buku (Grid System) */
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.section-label { 
+    font-size: 1.7rem; /* Lebih besar */
+    font-weight: 700; /* Lebih tebal */
+    margin-bottom: 25px; 
+    color: #2c3e50; 
+    border-left: 6px solid #e74c3c; /* Border lebih tebal */
+    padding-left: 15px; 
+    letter-spacing: 0.5px;
+}
 
-        /* Kartu Buku */
-           .book-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            position: relative;
-            
-            /* --- RUMUS BARU BIAR RATA --- */
-            display: flex;
-            flex-direction: column; /* Susun isinya ke bawah */
-            height: 100%; /* Paksa tinggi kartu mentok ke dasar grid */
-        }
-        }
-        .book-card:hover {
-            transform: translateY(-10px); /* Efek naik saat disentuh */
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Min size lebih besar */
+    gap: 35px; /* Jarak antar buku lebih besar */
+}
 
-        /* Gambar Cover (Rasio Ebook 2:3) */
-        .book-cover {
-            width: 100%;
-            /* Ini kuncinya: Memaksa gambar jadi persegi panjang tegak */
-            aspect-ratio: 2 / 3; 
-            
-            object-fit: cover; /* Agar gambar tidak gepeng */
-            object-position: center;
-            border-bottom: 1px solid #eee;
-        }
-        
-        /* Label Kategori (Pojok Kiri Atas) */
-        .badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .bg-fiksi { background: #9b59b6; }
-        .bg-psy { background: #27ae60; }
+/* Kartu Buku */
+.book-card {
+    background: white;
+    border-radius: 12px; /* Sedikit lebih membulat */
+    overflow: hidden;
+    /* Shadow Halus dan Dalam */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08), 0 2px 5px rgba(0,0,0,0.05); 
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transisi lebih mulus */
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+    border: 1px solid #eee; /* Garis tepi tipis */
+}
+.book-card:hover {
+    transform: translateY(-8px); /* Efek naik yang lebih halus */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* Shadow lebih menonjol */
+}
 
-        /* Info Buku */
-        .book-info { padding: 15px; text-align: center; }
-        .book-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; color: #2c3e50; }
-        .book-author { font-size: 0.9rem; color: #7f8c8d; margin-bottom: 15px; }
-        
-        
-        .btn-read {
-            display: block;
-            background: #e74c3c;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            
-            /* --- KUNCI BIAR NEMPEL DI BAWAH --- */
-            margin-top: auto; 
-        }
-        
-        .btn-home {
-            position: fixed; bottom: 20px; right: 20px;
-            background: #2c3e50; color: white;
-            width: 50px; height: 50px; border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-            text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-    </style>
+/* Gambar Cover */
+.book-cover {
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    object-fit: cover; 
+    object-position: center;
+    border-bottom: 1px solid #f0f2f5; /* Garis pemisah yang sangat halus */
+}
+
+/* Label Kategori */
+.badge {
+    position: absolute;
+    top: 15px; /* Jarak lebih besar dari atas */
+    left: 15px;
+    padding: 6px 14px; /* Padding lebih besar */
+    border-radius: 4px; /* Sudut sedikit kotak */
+    font-size: 0.75rem; /* Sedikit lebih besar */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Shadow untuk badge */
+    letter-spacing: 0.5px;
+}
+.bg-fiksi { background: #e67e22; } /* Warna Oranye yang lebih hangat */
+.bg-psy { background: #3498db; } /* Warna Biru yang lebih dinamis */
+
+/* Info Buku */
+.book-info { 
+    padding: 20px; /* Padding lebih besar */
+    text-align: center; 
+    flex-grow: 1; /* Agar info mengisi ruang yang tersisa */
+    display: flex;
+    flex-direction: column;
+}
+.book-title { 
+    font-size: 1.15rem; 
+    font-weight: 700; 
+    margin-bottom: 5px; 
+    color: #2c3e50; 
+    line-height: 1.3;
+}
+.book-author { 
+    font-size: 0.9rem; 
+    color: #95a5a6; /* Warna abu-abu yang lebih lembut */
+    margin-bottom: 15px; 
+    font-style: italic;
+}
+
+/* Tombol Baca */
+.btn-read {
+    display: block;
+    background: #e74c3c;
+    color: white;
+    text-decoration: none;
+    padding: 12px; /* Padding lebih besar */
+    border-radius: 6px; 
+    font-size: 0.95rem; /* Sedikit lebih besar */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: auto; 
+    box-shadow: 0 5px 10px rgba(231, 76, 60, 0.3); /* Shadow pada tombol */
+}
+.btn-read:hover {
+    background: #c0392b; /* Warna lebih gelap saat hover */
+}
+
+/* Tombol Home */
+.btn-home {
+    position: fixed; bottom: 25px; right: 25px; /* Jarak lebih jauh dari sudut */
+    background: #2c3e50; color: white;
+    width: 55px; height: 55px; border-radius: 50%; /* Sedikit lebih besar */
+    display: flex; justify-content: center; align-items: center;
+    text-decoration: none; 
+    box-shadow: 0 8px 18px rgba(0,0,0,0.4); /* Shadow lebih kuat */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-home:hover {
+    background: #34495e;
+    transform: scale(1.1); /* Efek membesar saat disentuh */
+}
+</style>
 </head>
 <body>
 
