@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5P0JMWC8EY"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5P0JMWC8EY"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      gtag('config', 'G-5P0JMWC8EY');
+    </script>
 
-    gtag('config', 'G-5P0JMWC8EY');
-</script>
+    <meta name="google-site-verification" content="PASTE_KODE_DARI_GOOGLE_DISINI" />
 
     <link rel="icon" href="fotoprofil.jpg" type="image/jpeg">
     <link rel="shortcut icon" href="fotoprofil.jpg" type="image/jpeg">
@@ -27,7 +28,6 @@
     <meta property="og:url" content="https://adnanfajarabdillah.my.id">
     <meta property="og:image" content="https://adnanfajarabdillah.my.id/fotoprofil.jpg">
     
-    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -37,22 +37,18 @@
         
         body { 
             font-family: 'Poppins', sans-serif; 
-            background-color: #f8f9fa; /* Kembali ke warna terang */
+            background-color: #f8f9fa; 
             color: #333; 
             line-height: 1.6; 
         }
         
         /* Header dengan Tekstur */
         header {
-            /* Kita tumpuk: Warna Gradasi Transparan + Gambar Pola di belakangnya */
             background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(76, 161, 175, 0.9)), 
                         url("https://www.transparenttextures.com/patterns/cubes.png");
-            
             color: white;
             padding: 100px 20px;
             text-align: center;
-            
-            /* Tambahan: Sedikit bayangan di bawah biar tidak nempel banget sama konten */
             box-shadow: 0 10px 20px -10px rgba(0,0,0,0.3);
         }
         
@@ -95,7 +91,7 @@
         /* Tombol */
         .btn {
             display: inline-block;
-            background: #2c3e50; /* Tombol Gelap */
+            background: #2c3e50;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -111,37 +107,16 @@
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
         }
-/* --- ANIMASI GERAK (MANTRA BARU) --- */
-        
-        /* 1. Bikin Rumus Gerakannya */
+
+        /* --- ANIMASI GERAK --- */
         @keyframes munculCantik {
-            from { 
-                opacity: 0;             /* Mulai dari transparan */
-                transform: translateY(30px); /* Mulai dari agak bawah */
-            }
-            to { 
-                opacity: 1;             /* Jadi terlihat jelas */
-                transform: translateY(0);    /* Pindah ke posisi asli */
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 2. Terapkan ke Header (Muncul duluan) */
-        header {
-            animation: munculCantik 1s ease-out forwards;
-        }
-
-        /* 3. Terapkan ke Isi Konten (Muncul belakangan/Delay) */
-        .container {
-            opacity: 0; /* Sembunyi dulu biar nggak kaget */
-            animation: munculCantik 1s ease-out 0.5s forwards; /* Delay 0.5 detik */
-        }
-        
-        /* 4. Terapkan ke Footer */
-        footer {
-            opacity: 0;
-            animation: munculCantik 1s ease-out 1s forwards; /* Delay 1 detik */
-        }
-
+        header { animation: munculCantik 1s ease-out forwards; }
+        .container { opacity: 0; animation: munculCantik 1s ease-out 0.5s forwards; }
+        footer { opacity: 0; animation: munculCantik 1s ease-out 1s forwards; }
     </style>
 </head>
 <body>
@@ -161,8 +136,7 @@
         </a>
 
         <a href="kontak.html" class="btn" style="background: #d93025; margin-left: 10px;">
-    <i class="fas fa-envelope"></i> Kirim Pesan
-</a>
+            <i class="fas fa-envelope"></i> Kirim Pesan
         </a>
     </header>
 
@@ -179,18 +153,18 @@
         <div class="card-grid">
             <div class="card">
                 <h3><i class="fas fa-book"></i> Penulis</h3>
-                <p>Aktif menulis antologi "Negri Intuisi" dan artikel dengan berbagai sudut pandang cerita.</p>
+                <p>Aktif menulis antologi "Negeri Intuisi" dan artikel dengan berbagai sudut pandang cerita.</p>
                 <br>
-                    <a href="katalog.html" class="btn" target="_blank" style="font-size: 0.9rem; background-color: #e74c3c;">
+                <a href="katalog.html" class="btn" target="_blank" style="font-size: 0.9rem; background-color: #e74c3c;">
                     <i class="fas fa-file-pdf"></i> Baca karya (PDF)
-                    </a>        
+                </a>        
             </div>
             <div class="card">
                 <h3><i class="fas fa-brain"></i> Psikologi & Konseling</h3>
                 <p>Lulusan Psikologi yang fokus ilmu bimbingan konseling dan memahami perilaku manusia.</p>
-            <a href="kegiatan.html" class="btn" style="font-size: 0.9rem; background-color: #16a085;">
-        <i class="fas fa-folder-open"></i> Lihat Portofolio BK
-    </a>
+                <a href="kegiatan.html" class="btn" style="font-size: 0.9rem; background-color: #16a085;">
+                    <i class="fas fa-folder-open"></i> Lihat Portofolio BK
+                </a>
             </div>
             <div class="card">
                 <h3><i class="fab fa-linux"></i> Teknologi</h3>
@@ -200,20 +174,15 @@
 
     </div>
 
-    <footer style="text-align: center; padding: 40px 20px; background: #2c3e50; color: white; margin-top: 40px;">
-        
+    <footer>
         <div style="margin-bottom: 20px;">
-            
             <a href="https://instagram.com/bae.abdi1" target="_blank" style="color: white; margin: 0 15px; font-size: 1.8rem; text-decoration: none; transition: 0.3s;">
                 <i class="fab fa-instagram"></i>
             </a>
-
             <a href="https://linkedin.com/in/Adnan Fajar" target="_blank" style="color: white; margin: 0 15px; font-size: 1.8rem; text-decoration: none; transition: 0.3s;">
                 <i class="fab fa-linkedin"></i>
             </a>
-
         </div>
-
         <p style="opacity: 0.7;">&copy; 2025 Adnan Fajar Abdillah. Hak Cipta Dilindungi Allah.SWT.</p>
     </footer>
 
